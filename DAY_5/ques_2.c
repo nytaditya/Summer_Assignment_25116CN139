@@ -1,33 +1,30 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main()
 {
-    int n, temp, digit, i;
-    int fact, sum = 0;
+    int n,temp,digit,sum=0,fact,i;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
+    printf("Enter number: ");
+    scanf("%d",&n);
 
-    temp = n;
+    temp=n;
 
-    while(n > 0)
+    while(n>0)
     {
-        digit = n % 10;
-        fact = 1;
+        digit=n%10;
+        fact=1;
 
-        for(i = 1; i <= digit; i++)
-        {
-            fact = fact * i;
-        }
+        for(i=1;i<=digit;i++)
+            fact=fact*i;
 
-        sum = sum + fact;
-        n = n / 10;
+        sum=sum+fact;
+        n=n/10;
     }
 
-    if(sum == temp)
+    if(sum==temp)
         printf("Strong Number");
     else
-        printf("Not a Strong Number");
+        printf("Not Strong Number");
 
     return 0;
 }

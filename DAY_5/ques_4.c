@@ -1,36 +1,22 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main()
 {
-    int n, i, j;
-    int largest = 0, prime;
+    int n,i,largest=0;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
+    printf("Enter number: ");
+    scanf("%d",&n);
 
-    for(i = 2; i <= n; i++)
+    for(i=2;i<=n;i++)
     {
-        if(n % i == 0)
+        while(n%i==0)
         {
-            prime = 1;
-
-            for(j = 2; j < i; j++)
-            {
-                if(i % j == 0)
-                {
-                    prime = 0;
-                    break;
-                }
-            }
-
-            if(prime == 1)
-            {
-                largest = i;
-            }
+            largest=i;
+            n=n/i;
         }
     }
 
-    printf("Largest Prime Factor = %d", largest);
+    printf("Largest Prime Factor = %d",largest);
 
     return 0;
 }
